@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Exercises: Functions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .exercise {
+            background-color: #ffeb3b;
+            padding: 20px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="number"], input[type="text"] {
+            font-size: 1.2em;
+            padding: 10px;
+            margin-top: 10px;
+            width: 60%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .navigation-links {
+            margin-top: 30px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #e53935;
+        }
+
+        .next-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Python Exercises: Functions</h1>
+
+    <!-- Exercise 1 -->
+    <div class="exercise">
+        <h3>Exercise 1: Calculate the Square of a Number</h3>
+        <label for="squareInput">Enter a number: </label>
+        <input type="number" id="squareInput" value="4" min="1" />
+        <br><br>
+        <button onclick="calculateSquare()">Calculate Square</button>
+        <p id="squareOutput"></p>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise">
+        <h3>Exercise 2: Check If a Number is Prime</h3>
+        <label for="primeInput">Enter a number: </label>
+        <input type="number" id="primeInput" value="11" min="1" />
+        <br><br>
+        <button onclick="checkPrime()">Check Prime</button>
+        <p id="primeOutput"></p>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise">
+        <h3>Exercise 3: Find the Maximum of Three Numbers</h3>
+        <label for="num1">Enter first number: </label>
+        <input type="number" id="num1" value="3" min="1" />
+        <br><br>
+        <label for="num2">Enter second number: </label>
+        <input type="number" id="num2" value="7" min="1" />
+        <br><br>
+        <label for="num3">Enter third number: </label>
+        <input type="number" id="num3" value="5" min="1" />
+        <br><br>
+        <button onclick="findMaximum()">Find Maximum</button>
+        <p id="maxOutput"></p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-links">
+        <a href="functions.html" class="nav-button back-button">Back to Info</a>
+        <a href="arrays.html" class="nav-button next-button">Next Lesson: Arrays</a>
+    </div>
+
+    <script>
+        function calculateSquare() {
+            const number = document.getElementById("squareInput").value;
+            const square = number * number;
+            document.getElementById("squareOutput").innerHTML = `The square of ${number} is ${square}.`;
+        }
+
+        function checkPrime() {
+            const number = document.getElementById("primeInput").value;
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            const result = isPrime && number > 1 ? `${number} is a prime number.` : `${number} is not a prime number.`;
+            document.getElementById("primeOutput").innerHTML = result;
+        }
+
+        function findMaximum() {
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            const num3 = document.getElementById("num3").value;
+            const max = Math.max(num1, num2, num3);
+            document.getElementById("maxOutput").innerHTML = `The largest number is ${max}.`;
+        }
+    </script>
+
+</body>
+</html>

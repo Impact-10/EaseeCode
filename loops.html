@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python: Loops & Repetition</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .intro {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .lesson-content {
+            font-size: 1.2em;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .code-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .exercise {
+            background-color: #ffeb3b;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        .next-button {
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Learn Python: Loops & Repetition</h1>
+
+    <div class="intro">
+        <p>Loops allow you to repeat a block of code multiple times. Let’s work with loops in different scenarios to build a strong understanding of them.</p>
+    </div>
+
+    <div class="lesson-content">
+        <p><strong>1. For Loop (with range):</strong> This loop repeats a block of code a fixed number of times.</p>
+        <div class="code-box">
+            <pre>
+# For loop with range
+for i in range(5):
+    print(i)
+            </pre>
+        </div>
+
+        <p><strong>2. For Loop (with list):</strong> Loops can also iterate over items in a list or array.</p>
+        <div class="code-box">
+            <pre>
+# For loop with a list
+colors = ["red", "blue", "green"]
+for color in colors:
+    print(color)
+            </pre>
+        </div>
+
+        <p><strong>3. While Loop:</strong> The while loop repeats as long as the condition is true.</p>
+        <div class="code-box">
+            <pre>
+# While loop example
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+            </pre>
+        </div>
+
+        <p><strong>4. For Loop (with break):</strong> The <code>break</code> statement can be used to exit a loop early.</p>
+        <div class="code-box">
+            <pre>
+# For loop with break
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+            </pre>
+        </div>
+
+        <p><strong>5. For Loop (with continue):</strong> The <code>continue</code> statement can be used to skip the current iteration and proceed to the next one.</p>
+        <div class="code-box">
+            <pre>
+# For loop with continue
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+            </pre>
+        </div>
+
+        <button class="next-button" onclick="window.location.href='lexercise.html'">Go to Exercises</button>
+    </div>
+
+</body>
+</html>

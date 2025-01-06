@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python: Exercises - Lists and Arrays</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .exercise {
+            font-size: 1.2em;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .exercise h3 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .exercise p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .exercise input {
+            padding: 8px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        #colorsOutput, #updatedColorsOutput, #sublistOutput {
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .back-button {
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Learn Python: Exercises - Lists and Arrays</h1>
+
+    <div class="exercise">
+        <h3>Exercise 1: Create a List of Your Favorite Colors</h3>
+        <p>Define a list of 5 of your favorite colors. Print the list and access the third item in the list.</p>
+
+        <label for="colorsInput">Enter your favorite colors (comma-separated): </label>
+        <input type="text" id="colorsInput" value="red, blue, green, yellow, purple" />
+
+        <br><br>
+
+        <button onclick="createList()">Create List and Access Third Item</button>
+        <p id="colorsOutput"></p>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Add a New Color to the List</h3>
+        <p>Add a new color to the list of colors you created in Exercise 1 and print the updated list.</p>
+
+        <button onclick="addColor()">Add a New Color</button>
+        <p id="updatedColorsOutput"></p>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: List Slicing</h3>
+        <p>Use list slicing to extract a sublist from the list of colors you created in Exercise 1. The sublist should contain the first 3 colors.</p>
+
+        <button onclick="sliceList()">Get Sublist</button>
+        <p id="sublistOutput"></p>
+    </div>
+
+    <div class="back-button" onclick="goBack()">Back to Lesson</div>
+
+    <script>
+        let colorsList = [];
+
+        function createList() {
+            const colorsInput = document.getElementById("colorsInput").value;
+            colorsList = colorsInput.split(',').map(color => color.trim());
+            document.getElementById("colorsOutput").innerHTML = `The list of colors is: ${colorsList}. The third color is: ${colorsList[2]}.`;
+        }
+
+        function addColor() {
+            const newColor = prompt("Enter a new color to add:");
+            colorsList.push(newColor);
+            document.getElementById("updatedColorsOutput").innerHTML = `Updated list: ${colorsList}.`;
+        }
+
+        function sliceList() {
+            const sublist = colorsList.slice(0, 3);
+            document.getElementById("sublistOutput").innerHTML = `Sublist (first 3 colors): ${sublist}.`;
+        }
+
+        // Function to go back to the lesson
+        function goBack() {
+            window.location.href = "secondpage.html"; // Back to the lesson page
+        }
+    </script>
+
+</body>
+</html>

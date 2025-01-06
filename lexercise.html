@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Loops Exercises</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .intro {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .exercise {
+            background-color: #ffeb3b;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            margin-top: 40px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #e53935;
+        }
+
+        input[type="number"], input[type="button"], input[type="text"] {
+            font-size: 1.2em;
+            padding: 10px;
+            margin-top: 10px;
+            width: 60%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Python Loops Exercises</h1>
+
+    <!-- Exercise 1: Multiples of a Number -->
+    <div class="exercise">
+        <h3>Exercise 1: Multiples of a Number</h3>
+        <p>Write a loop that prints all multiples of a number within a specified range. You can adjust the range and the step value.</p>
+
+        <label for="multipleRangeStart">Enter the start of range: </label>
+        <input type="number" id="multipleRangeStart" value="1" min="1" />
+
+        <label for="multipleRangeEnd">Enter the end of range: </label>
+        <input type="number" id="multipleRangeEnd" value="50" min="1" />
+
+        <label for="multipleIncrement">Enter the increment value: </label>
+        <input type="number" id="multipleIncrement" value="3" min="1" />
+
+        <br><br>
+
+        <button onclick="multiplesOfNumber()">Run Exercise 1</button>
+        <p id="exercise1Output"></p>
+    </div>
+
+    <!-- Exercise 2: Sum of Even Numbers -->
+    <div class="exercise">
+        <h3>Exercise 2: Sum of Even Numbers</h3>
+        <p>Write a loop that calculates the sum of all even numbers between a range that you provide. Use the range and step value to control the calculation.</p>
+
+        <label for="sumEvenRangeStart">Enter the start of range: </label>
+        <input type="number" id="sumEvenRangeStart" value="1" min="1" />
+
+        <label for="sumEvenRangeEnd">Enter the end of range: </label>
+        <input type="number" id="sumEvenRangeEnd" value="10" min="1" />
+
+        <label for="sumEvenIncrement">Enter the increment value: </label>
+        <input type="number" id="sumEvenIncrement" value="1" min="1" />
+
+        <br><br>
+
+        <button onclick="sumEvenNumbersLoop()">Run Exercise 2</button>
+        <p id="exercise2Output"></p>
+    </div>
+
+    <!-- Exercise 3: Reverse Count -->
+    <div class="exercise">
+        <h3>Exercise 3: Reverse Count</h3>
+        <p>Write a loop that counts backward from a number you provide, with an increment/decrement value of your choice.</p>
+
+        <label for="reverseCountNumber">Enter a number to start from: </label>
+        <input type="number" id="reverseCountNumber" value="10" min="1" />
+
+        <label for="reverseIncrement">Enter the decrement value: </label>
+        <input type="number" id="reverseIncrement" value="1" min="1" />
+
+        <br><br>
+
+        <button onclick="reverseCountLoop()">Run Exercise 3</button>
+        <p id="exercise3Output"></p>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='loops.html'">Back to Lesson</button>
+    <button class="back-button" onclick="window.location.href='conditional.html'">Next: Conditional</button>
+
+    <script>
+        function multiplesOfNumber() {
+            const start = document.getElementById("multipleRangeStart").value;
+            const end = document.getElementById("multipleRangeEnd").value;
+            const increment = document.getElementById("multipleIncrement").value;
+            let output = "Multiples from " + start + " to " + end + " with increment of " + increment + ": <br>";
+            for (let i = start; i <= end; i += parseInt(increment)) {
+                output += i + "<br>";
+            }
+            document.getElementById("exercise1Output").innerHTML = output;
+        }
+
+        function sumEvenNumbersLoop() {
+            const start = document.getElementById("sumEvenRangeStart").value;
+            const end = document.getElementById("sumEvenRangeEnd").value;
+            const increment = document.getElementById("sumEvenIncrement").value;
+            let sum = 0;
+            let output = "Sum of even numbers between " + start + " and " + end + ": <br>";
+            for (let i = parseInt(start); i <= parseInt(end); i += parseInt(increment)) {
+                if (i % 2 === 0) {
+                    sum += i;
+                }
+            }
+            output += sum;
+            document.getElementById("exercise2Output").innerHTML = output;
+        }
+
+        function reverseCountLoop() {
+            const start = document.getElementById("reverseCountNumber").value;
+            const decrement = document.getElementById("reverseIncrement").value;
+            let output = "Counting down from " + start + " with decrement of " + decrement + ": <br>";
+            for (let i = start; i >= 0; i -= parseInt(decrement)) {
+                output += i + "<br>";
+            }
+            document.getElementById("exercise3Output").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>

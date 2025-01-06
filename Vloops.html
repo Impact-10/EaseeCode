@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Coding for Kids</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+            animation: gradient 10s ease infinite;
+            background-size: 400% 400%;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .concept-visual {
+            margin: 30px auto;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .concept-visual canvas {
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background-color: #f3f3f3;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px auto;
+            color: #333;
+        }
+
+        .standard-text {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 40px auto;
+            color: #333;
+        }
+
+        .back-icon {
+            display: block;
+            margin: 40px auto;
+            width: 50px;
+            height: 50px;
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-icon:hover {
+            background-color: #e64a19;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Learn Coding with Fun!</h1>
+    </header>
+
+    <section class="main-content">
+        <h2>Animated Concept Visuals</h2>
+        <p class="description">Visualize programming concepts like loops, conditions, and variables in action!</p>
+        <div class="concept-visual">
+            <canvas id="conceptCanvas" width="800" height="400"></canvas>
+        </div>
+
+        <div class="standard-text">
+            <p>This is a simple visual representation of basic programming concepts to make learning fun!</p>
+        </div>
+
+        <div class="back-icon" onclick="window.location.href = 'videoS.html';">
+            &#8592;
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById("conceptCanvas");
+        const ctx = canvas.getContext("2d");
+
+        function drawText(text, x, y) {
+            ctx.font = "20px Comic Sans MS";
+            ctx.fillStyle = "#333";
+            ctx.textAlign = "center";
+            ctx.fillText(text, x, y);
+        }
+
+        function drawLoopConcept() {
+            let x = 70;
+            let loopY = 200;
+            let step = 100;
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw title
+                drawText("Loop in Action", canvas.width / 2, 50);
+
+                // Draw looping concept
+                drawText("Start", x - 30, loopY - 40);
+                drawText("End", canvas.width - 50, loopY - 40);
+
+                for (let i = x; i < canvas.width - 50; i += step) {
+                    ctx.beginPath();
+                    ctx.arc(i, loopY, 20, 0, Math.PI * 2);
+                    ctx.fillStyle = "#4caf50";
+                    ctx.fill();
+                    ctx.strokeStyle = "#333";
+                    ctx.stroke();
+
+                    drawText(`Step ${((i - x) / step) + 1}`, i, loopY + 40);
+                }
+
+                // Highlight moving element
+                let movingX = x + ((Date.now() / 5) % (canvas.width - x - 50));  // Speed increased here
+                ctx.beginPath();
+                ctx.arc(movingX, loopY, 25, 0, Math.PI * 2);
+                ctx.fillStyle = "#ff5722";
+                ctx.fill();
+                ctx.stroke();
+                drawText("Looping...", movingX, loopY + 70);
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function drawConditionConcept() {
+            let conditionX = 400;
+            let conditionY = 200;
+
+            // Draw condition text
+            drawText("Condition: x > 5", canvas.width / 2, 50);
+
+            // Draw true and false paths
+            ctx.beginPath();
+            ctx.moveTo(conditionX, conditionY);
+            ctx.lineTo(conditionX - 100, conditionY + 100);
+            ctx.strokeStyle = "green";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(conditionX, conditionY);
+            ctx.lineTo(conditionX + 100, conditionY + 100);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw labels
+            drawText("True", conditionX - 100, conditionY + 120);
+            drawText("False", conditionX + 100, conditionY + 120);
+
+            // Draw condition box
+            ctx.beginPath();
+            ctx.rect(conditionX - 50, conditionY - 20, 100, 40);
+            ctx.fillStyle = "#ffcc00";
+            ctx.fill();
+            ctx.strokeStyle = "#333";
+            ctx.stroke();
+            drawText("x > 5", conditionX, conditionY);
+        }
+
+        function showConcept(concept) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (concept === "loop") {
+                drawLoopConcept();
+            } else if (concept === "condition") {
+                drawConditionConcept();
+            }
+        }
+
+        // Start with loop concept
+        drawLoopConcept();
+
+        // Switch to condition concept after 10 seconds
+        setTimeout(() => {
+            showConcept("condition");
+        }, 10000);
+    </script>
+</body>
+</html>

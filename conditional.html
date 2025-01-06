@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python: Conditional Statements</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .intro {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .lesson-content {
+            font-size: 1.2em;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .code-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .next-button {
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Learn Python: Conditional Statements</h1>
+
+    <div class="intro">
+        <p>Conditional statements are used to perform different actions based on different conditions. Learn to use the <code>if</code>, <code>else</code>, and <code>elif</code> statements in Python!</p>
+    </div>
+
+    <div class="lesson-content">
+        <p><strong>1. Simple if statement:</strong> An <code>if</code> statement lets you test a condition, and if it's true, the block of code inside the <code>if</code> will run.</p>
+        <div class="code-box">
+            <pre>
+# Example of simple if
+if number > 10:
+    print("Number is greater than 10")
+            </pre>
+        </div>
+
+        <p><strong>2. if-else statement:</strong> An <code>if-else</code> statement lets you test a condition. If the condition is true, one block of code will run; otherwise, another block will run.</p>
+        <div class="code-box">
+            <pre>
+# Example of if-else
+if number > 10:
+    print("Number is greater than 10")
+else:
+    print("Number is 10 or less")
+            </pre>
+        </div>
+
+        <p><strong>3. if-elif-else statement:</strong> The <code>elif</code> keyword lets you check multiple conditions.</p>
+        <div class="code-box">
+            <pre>
+# Example of if-elif-else
+if number > 10:
+    print("Number is greater than 10")
+elif number == 10:
+    print("Number is equal to 10")
+else:
+    print("Number is less than 10")
+            </pre>
+        </div>
+
+        <p><strong>4. Nested if statements:</strong> You can also have <code>if</code> statements inside another <code>if</code> statement, known as a nested if.</p>
+        <div class="code-box">
+            <pre>
+# Example of nested if
+if number > 5:
+    if number < 10:
+        print("Number is between 5 and 10")
+    else:
+        print("Number is greater than or equal to 10")
+else:
+    print("Number is 5 or less")
+            </pre>
+        </div>
+
+        <button class="next-button" onclick="window.location.href='cexercise.html'">Go to Exercise</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

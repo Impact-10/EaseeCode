@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python: Lists and Arrays</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .intro {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .lesson-content {
+            font-size: 1.2em;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .code-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .exercise {
+            background-color: #ffeb3b;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        .next-button {
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Learn Python: Lists and Arrays</h1>
+
+    <div class="intro">
+        <p>In Python, lists allow you to store multiple items in a single variable. Lists are ordered, changeable, and can hold a mix of data types.</p>
+    </div>
+
+    <div class="lesson-content">
+        <p><strong>1. Defining a List:</strong> Lists are created using square brackets <code>[]</code> and can store a variety of data types like integers, strings, or even other lists.</p>
+        <div class="code-box">
+            <pre>
+# Example of a list
+my_list = [1, 2, 3, 4, 5]
+print(my_list)  # Output: [1, 2, 3, 4, 5]
+            </pre>
+        </div>
+
+        <p><strong>2. Accessing List Elements:</strong> You can access elements in a list by using their index. Remember, Python uses zero-based indexing!</p>
+        <div class="code-box">
+            <pre>
+# Accessing elements in a list
+print(my_list[0])  # Output: 1
+print(my_list[3])  # Output: 4
+            </pre>
+        </div>
+
+        <p><strong>3. Modifying a List:</strong> You can change the value of an item in a list by referring to its index.</p>
+        <div class="code-box">
+            <pre>
+# Modifying list elements
+my_list[2] = 10
+print(my_list)  # Output: [1, 2, 10, 4, 5]
+            </pre>
+        </div>
+
+        <p><strong>4. Adding Items to a List:</strong> You can add items to a list using methods like <code>append()</code> and <code>insert()</code>.</p>
+        <div class="code-box">
+            <pre>
+# Adding items
+my_list.append(6)  # Adds 6 to the end
+my_list.insert(2, 7)  # Inserts 7 at index 2
+print(my_list)  # Output: [1, 2, 7, 10, 4, 5, 6]
+            </pre>
+        </div>
+
+        <p><strong>5. Removing Items from a List:</strong> You can remove items using <code>remove()</code>, <code>pop()</code>, or <code>del</code>.</p>
+        <div class="code-box">
+            <pre>
+# Removing items
+my_list.remove(10)  # Removes the first occurrence of 10
+my_list.pop()  # Removes the last item
+del my_list[1]  # Deletes the item at index 1
+print(my_list)  # Output: [1, 7, 4, 5]
+            </pre>
+        </div>
+
+        <p><strong>6. Looping Through Lists:</strong> You can loop through a list using a <code>for</code> loop.</p>
+        <div class="code-box">
+            <pre>
+# Looping through a list
+for item in my_list:
+    print(item)
+# Output:
+# 1
+# 7
+# 4
+# 5
+            </pre>
+        </div>
+
+        <p><strong>7. List Slicing:</strong> You can extract a portion of a list using slicing.</p>
+        <div class="code-box">
+            <pre>
+# List slicing
+sub_list = my_list[1:3]  # Slices the list from index 1 to 2
+print(sub_list)  # Output: [7, 4]
+            </pre>
+        </div>
+
+        <p><strong>8. Working with Arrays:</strong> Arrays in Python are provided by the <code>array</code> module. While lists are more versatile, arrays are more memory-efficient for large data.</p>
+        <div class="code-box">
+            <pre>
+# Example of creating an array
+import array
+arr = array.array('i', [1, 2, 3, 4, 5])
+print(arr)  # Output: array('i', [1, 2, 3, 4, 5])
+            </pre>
+        </div>
+        <button class="next-button" onclick="window.location.href='aexercise.html'">Go to Exercise</button>
+    
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice: Conditional Statements</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .intro {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: bold;
+        }
+
+        .lesson-content {
+            font-size: 1.2em;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .exercise {
+            background-color: #ffeb3b;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .exercise button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .exercise button:hover {
+            background-color: #45a049;
+        }
+
+        .next-button {
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Practice: Conditional Statements</h1>
+
+    <div class="intro">
+        <p>Test your understanding of conditional statements by solving these exercises. Use <code>if</code>, <code>else</code>, <code>elif</code>, and nested statements to implement solutions!</p>
+    </div>
+
+    <div class="lesson-content">
+        <div class="exercise">
+            <h3>Exercise 1: Positive, Negative, or Zero</h3>
+            <p>Write a Python program to determine if a number is positive, negative, or zero.</p>
+            <label for="numInput1">Enter a number: </label>
+            <input type="number" id="numInput1" value="0" />
+            <br><br>
+            <button onclick="checkNumber()">Check</button>
+            <p id="result1"></p>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2: Find the Largest Number</h3>
+            <p>Write a Python program to find the largest number among three inputs.</p>
+            <label for="numInput2">Enter first number: </label>
+            <input type="number" id="numInput2" value="3" />
+            <br><br>
+            <label for="numInput3">Enter second number: </label>
+            <input type="number" id="numInput3" value="7" />
+            <br><br>
+            <label for="numInput4">Enter third number: </label>
+            <input type="number" id="numInput4" value="5" />
+            <br><br>
+            <button onclick="findLargest()">Find Largest</button>
+            <p id="result2"></p>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3: Nested Condition Example</h3>
+            <p>Write a Python program to check if a number is between 5 and 10 using nested conditions.</p>
+            <label for="numInput5">Enter a number: </label>
+            <input type="number" id="numInput5" value="8" />
+            <br><br>
+            <button onclick="checkRange()">Check Range</button>
+            <p id="result3"></p>
+        </div>
+
+        <button class="next-button" onclick="window.location.href='conditional.html'">Back to Info</button>
+        <button class="next-button" onclick="window.location.href='functions.html'">Next: functions</button>
+    </div>
+
+    <script>
+        function checkNumber() {
+            const num = document.getElementById("numInput1").value;
+            let result;
+            if (num > 0) {
+                result = `${num} is positive.`;
+            } else if (num < 0) {
+                result = `${num} is negative.`;
+            } else {
+                result = `${num} is zero.`;
+            }
+            document.getElementById("result1").innerHTML = result;
+        }
+
+        function findLargest() {
+            const num1 = document.getElementById("numInput2").value;
+            const num2 = document.getElementById("numInput3").value;
+            const num3 = document.getElementById("numInput4").value;
+            const largest = Math.max(num1, num2, num3);
+            document.getElementById("result2").innerHTML = `The largest number is ${largest}.`;
+        }
+
+        function checkRange() {
+            const num = document.getElementById("numInput5").value;
+            let result;
+            if (num > 5) {
+                if (num < 10) {
+                    result = `${num} is between 5 and 10.`;
+                } else {
+                    result = `${num} is greater than or equal to 10.`;
+                }
+            } else {
+                result = `${num} is 5 or less.`;
+            }
+            document.getElementById("result3").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
